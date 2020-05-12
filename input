@@ -1,0 +1,18 @@
+7
+Newark
+Montclair
+Livingston
+Caldwell
+Fairfield
+Belleville
+Roseland
+9
+Newark, Livingston, 80
+Newark, Roseland, 10
+Newark, Belleville, 20
+Livingston, Fairfield, 15
+Livingston, Montclair, 30
+Fairfield, Montclair, 45
+Caldwell, Belleville, 25
+Caldwell, Fairfield, 15
+Belleville, Fairfield, 10
