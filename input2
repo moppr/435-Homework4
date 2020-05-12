@@ -1,0 +1,34 @@
+14
+Greensboro
+Bennington
+Brattleboro
+Shelbourne
+Putney
+Manchester
+Warren
+Moretown
+Fayston
+Duxbury
+Middlesex
+Ripton
+Shaftsbury
+Pawlet
+18
+Greensboro, Bennington, 10
+Bennington, Shelbourne, 9
+Greensboro, Shelbourne, 60
+Bennington, Middlesex, 40
+Bennington, Manchester, 17
+Manchester, Putney, 18
+Putney, Brattleboro, 65
+Brattleboro, Manchester, 20
+Middlesex, Duxbury, 16
+Middlesex, Ripton, 49
+Ripton, Shaftsbury, 3
+Ripton, Pawlet, 24
+Duxbury, Manchester, 25
+Warren, Moretown, 38
+Moretown, Fayston, 19
+Fayston, Warren, 7
+Pawlet, Shaftsbury, 15
+Shaftsbury, Fayston, 50

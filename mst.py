@@ -80,22 +80,22 @@ if __name__ == "__main__":
 
     # Prim's Algorithm.
     start = graph.get_random_node()
-    pq = {}
+    min_times = {}
     mst = {start}
     total = 0
 
     for other in start.edges:
-        pq[other] = start.edges[other]
+        min_times[other] = start.edges[other]
 
     while len(mst) < num_towns:
         # Code to get key of min value in dict adapted from
         # https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-15.php
-        min_node = min(pq.keys(), key=(lambda k: pq[k]))
-        total += pq.pop(min_node)
+        min_node = min(min_times.keys(), key=(lambda k: min_times[k]))
+        total += min_times.pop(min_node)
         if min_node not in mst:
             mst.add(min_node)
             for other in min_node.edges:
                 if other not in mst:
-                    pq[other] = min_node.edges[other]
+                    min_times[other] = min(min_node.edges[other], min_times[other]) if other in min_times else min_node.edges[other]
 
     print(total)
