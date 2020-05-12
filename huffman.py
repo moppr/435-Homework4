@@ -1,4 +1,6 @@
-# Node/Heap provided by prompt
+# Node/Heap provided by prompt.
+
+
 class Node:
 
     def __init__(self, c, freq):
@@ -18,13 +20,6 @@ class MinHeap:
 
     def __len__(self):
         return len(self.data)
-
-    def empty(self):
-        return len(self) == 0
-
-    def print(self):
-        for x in self.data:
-            print(x.c + str(x.freq))
 
     def insert(self, val):
         self.data.append(val)
@@ -61,20 +56,19 @@ class MinHeap:
             self._heapify_down(mini)
 
 
-def in_order(node, map, code):
+def generate_map(node, map, code):
     if node.left:
-        in_order(node.left, map, code + "0")
+        generate_map(node.left, map, code + "0")
     if node.right:
-        in_order(node.right, map, code + "1")
+        generate_map(node.right, map, code + "1")
     if node.is_leaf():
         map[node.c] = code
 
 
-def build_tree(text_input):
-    # Build huffman tree.
+def build_tree(text):
     heap = MinHeap()
-    for character in sorted(set(text_input)):
-        heap.insert(Node(character, text_input.count(character)))
+    for character in sorted(set(text)):
+        heap.insert(Node(character, text.count(character)))
 
     while len(heap) > 1:
         dummy_node = Node("*", -1)
@@ -93,9 +87,8 @@ if __name__ == "__main__":
     heap = build_tree(text_input)
 
     # Encode string.
-    root = heap.extract_min()
     encoding_map = {}
-    in_order(root, encoding_map, "")
+    generate_map(heap.extract_min(), encoding_map, "")
     print("".join([encoding_map[character] for character in text_input]))
 
     heap = build_tree(text_input)
